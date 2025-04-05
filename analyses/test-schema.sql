@@ -1,0 +1,1 @@
+select {{Multiply(100,10)}}

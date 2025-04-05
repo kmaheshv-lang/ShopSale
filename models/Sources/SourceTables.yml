@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: Raw
+    database: Sales
+    schema: RAW
+    tables:
+      - name: COUNTRIES
+      - name: EMPLOYEES
+      - name: LOCATIONS
+      - name: PRODUCT_CATEGORIES
+      - name: REGIONS
+      - name: WAREHOUSES
+      - name: PRODUCTS
+      - name: CUSTOMERS
+      - name: ORDERS
+      - name: ORDER_ITEMS
+      - name : orders
+        loaded_at_field: ORDER_DATE
+        freshness:
+          warn_after:
+            count: 12
+            period: hour
+          error_after:
+            count: 12
+            period: hour
+
+    
