@@ -11,5 +11,20 @@ models:
         tests:
           - not_null
           - is_valid_length
-          
-          
+          - accepted_values:
+              values:
+                - "Australia,Belgium, Switzerland,China"
+  - name: stg_WAREHOUSES
+    columns:
+      - name: LOCATION_ID
+        tests:
+          - relationships:
+              to: ref('stg_LOCATIONS')
+              field: LOCATION_ID
+  - name: stg_LOCATIONS
+    columns:
+      - name: COUNTRY_ID
+        tests:
+          - relationships:
+              to: ref('stg_COUNTRY')
+              field: COUNTRY_ID

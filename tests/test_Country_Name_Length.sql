@@ -1,0 +1,1 @@
+select * from {{ref('Stg_COUNTRIES')}} where length(COUNTRY_NAME) > 20
